@@ -5,7 +5,6 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 
 import { Icons } from "../icons"
-import { ModeToggle } from "../mode-toggle"
 import { buttonVariants } from "../ui/button"
 
 const Hero = () => {
@@ -28,7 +27,6 @@ const Hero = () => {
         >
           {t("cta")}
         </Link>
-        <ModeToggle />
       </div>
       <div className="mt-6 text-center text-sm">
         <p className="text-muted-foreground">

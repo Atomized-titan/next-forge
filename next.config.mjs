@@ -1,8 +1,12 @@
-import createNextIntlPlugin from "next-intl/plugin"
+import withNextIntl from "next-intl/plugin"
 
-const withNextIntl = createNextIntlPlugin()
+const nextIntlConfig = withNextIntl()
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+/** @type {import("next").NextConfig} */
+const config = {
+  images: {
+    remotePatterns: [],
+  },
+}
 
-export default withNextIntl(nextConfig)
+export default nextIntlConfig(config)
