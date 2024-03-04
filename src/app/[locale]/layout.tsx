@@ -5,6 +5,7 @@ import { Inter } from "next/font/google"
 import { NextIntlClientProvider, useMessages } from "next-intl"
 
 import { siteConfig } from "@/config/site"
+import { Locale } from "@/lib/locales"
 import { cn } from "@/lib/utils"
 import { MainNav } from "@/components/common/main-nav"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -14,7 +15,7 @@ const inter = Inter({ subsets: ["latin"] })
 interface RootLayoutProps {
   children: React.ReactNode
   params: {
-    locale: "en" | "es"
+    locale: Locale
   }
 }
 
