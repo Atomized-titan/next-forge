@@ -1,0 +1,10 @@
+{
+  "marketing": {
+    "main": {
+      "title": "Next Forge",
+      "description": "A cutting-edge Next.js 14+ template featuring an app router, shadcn/ui, typesafe environment, and pre-configured icons and settings for rapid development.",
+      "cta": "Get Started",
+      "last_updated": "Last updated: {now,date,medium}"
+    }
+  }
+}

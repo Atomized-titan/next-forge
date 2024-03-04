@@ -2,15 +2,20 @@ import "@/styles/globals.css"
 
 import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
+import { NextIntlClientProvider, useMessages } from "next-intl"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+import { MainNav } from "@/components/common/main-nav"
 import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
 interface RootLayoutProps {
   children: React.ReactNode
+  params: {
+    locale: "en" | "es"
+  }
 }
 
 export const metadata: Metadata = {
@@ -63,9 +68,13 @@ export const viewport: Viewport = {
   ],
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({
+  children,
+  params: { locale },
+}: RootLayoutProps) {
+  const messages = useMessages()
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head />
       <body
         className={cn(
@@ -79,7 +88,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            <header className="container z-40 bg-background">
+              <div className="flex h-20 items-center justify-between py-6">
+                <MainNav />
+              </div>
+            </header>
+            <main className="flex-1">{children}</main>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

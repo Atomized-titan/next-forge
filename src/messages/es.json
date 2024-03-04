@@ -1,0 +1,10 @@
+{
+  "marketing": {
+    "main": {
+      "title": "Next Fragua",
+      "description": "Una plantilla Next.js 14+ de última generación que incluye un enrutador de aplicaciones, shadcn/ui, entorno con seguridad de tipos e íconos y configuraciones preconfigurados para un desarrollo rápido.",
+      "cta": "Empezar",
+      "last_updated": "última actualización: {now,date,medium}"
+    }
+  }
+}
